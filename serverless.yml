@@ -1,0 +1,52 @@
+service: serverless-api
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: ${opt:stage,self:custom.stage}
+  region: us-east-1
+  profile: <YOUR AWS PROFILE>
+  iamRoleStatements: # IAM Role Permissions
+    - Effect: "Allow"
+      Action:
+        - "logs:CreateLogGroup"
+        - "logs:CreateLogStream"
+        - "logs:PutLogEvents"
+      Resource: "*"
+    - Effect: "Allow"
+      Action:
+        - "s3:ListBucket"
+      Resource: { "Fn::Join" : ["", ["arn:aws:s3:::", { "Ref" : "ServerlessDeploymentBucket" } ] ]  }
+    - Effect: "Allow"
+      Action:
+        - "s3:PutObject"
+      Resource:
+        Fn::Join:
+          - ""
+          - - "arn:aws:s3:::"
+            - "Ref" : "ServerlessDeploymentBucket"
+            - "/*"
+
+
+# Custom variables
+custom:
+  stage: dev
+  stages: # for stage manager
+    - dev
+    - staging
+    - prod
+
+# Plugins
+plugins:
+  - serverless-stage-manager
+
+# Functions
+functions:
+  serverless-api:
+    name: ${self:service}-${self:provider.stage}-serverless-api
+    handler: handler.router
+    timeout: 30
+    events:
+      - http:
+          path: 'v1/{proxy+}'
+          method: any

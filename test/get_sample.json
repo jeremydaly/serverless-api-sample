@@ -1,0 +1,56 @@
+{
+  "resource": "/v1/posts",
+  "path": "/v1/posts",
+  "httpMethod": "GET",
+  "headers": {
+    "Authorization": "Bearer ...",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept-Language": "en-us",
+    "cache-control": "max-age=0",
+    "CloudFront-Forwarded-Proto": "https",
+    "CloudFront-Is-Desktop-Viewer": "true",
+    "CloudFront-Is-Mobile-Viewer": "false",
+    "CloudFront-Is-SmartTV-Viewer": "false",
+    "CloudFront-Is-Tablet-Viewer": "false",
+    "CloudFront-Viewer-Country": "US",
+    "Cookie": "...",
+    "Host": "...",
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) ...",
+    "Via": "2.0 ... (CloudFront)",
+    "X-Amz-Cf-Id": "...",
+    "X-Amzn-Trace-Id": "...",
+    "X-Forwarded-For": "xxx.xxx.xxx.xxx",
+    "X-Forwarded-Port": "443",
+    "X-Forwarded-Proto": "https"
+  },
+  "queryStringParameters": {
+    "qs1": "q1"
+  },
+  "stageVariables": null,
+  "requestContext": {
+    "accountId": "...",
+    "resourceId": "...",
+    "stage": "prod",
+    "requestId": "...",
+    "identity": {
+      "cognitoIdentityPoolId": null,
+      "accountId": null,
+      "cognitoIdentityId": null,
+      "caller": null,
+      "apiKey": null,
+      "sourceIp": "xxx.xxx.xxx.xxx",
+      "accessKey": null,
+      "cognitoAuthenticationType": null,
+      "cognitoAuthenticationProvider": null,
+      "userArn": null,
+      "userAgent": "...",
+      "user": null
+    },
+    "resourcePath": "/v1/posts",
+    "httpMethod": "GET",
+    "apiId": "..."
+  },
+  "body": null,
+  "isBase64Encoded": false
+}

@@ -1,0 +1,30 @@
+{
+  "name": "serverless-api",
+  "version": "1.0.0",
+  "description": "Sample Serverless API using lambda-api",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeremydaly/serverless-api"
+  },
+  "keywords": [
+    "serverless",
+    "api",
+    "lambda",
+    "aws",
+    "restful"
+  ],
+  "author": "Jeremy Daly <jeremy@jeremydaly.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeremydaly/serverless-api/issues"
+  },
+  "homepage": "https://github.com/jeremydaly/serverless-api#readme",
+  "dependencies": {
+    "lambda-api": "^0.1.0",
+    "serverless-stage-manager": "^1.0.4"
+  }
+}
