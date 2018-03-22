@@ -9,8 +9,7 @@
 
 
 // Require and init API router module
-const API = require('lambda-api')
-const app = new API({ version: 'v1.0', base: 'v1' })
+const app = require('lambda-api')({ version: 'v1.0', base: 'v1' })
 
 
 //----------------------------------------------------------------------------//
