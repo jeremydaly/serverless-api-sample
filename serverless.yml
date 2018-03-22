@@ -1,4 +1,4 @@
-service: serverless-api
+service: serverless-api-sample
 
 provider:
   name: aws
@@ -42,8 +42,8 @@ plugins:
 
 # Functions
 functions:
-  serverless-api:
-    name: ${self:service}-${self:provider.stage}-serverless-api
+  serverless-api-sample:
+    name: ${self:service}-${self:provider.stage}-serverless-api-sample
     handler: handler.router
     timeout: 30
     events:
