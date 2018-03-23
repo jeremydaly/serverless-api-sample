@@ -33,9 +33,9 @@ const app = require('lambda-api')({ version: 'v1.0', base: 'v1' })
   app.use(function(req,res,next) {
 
     // Check for Authorization headers
-    if (req.headers.Authorization) {
+    if (req.headers.authorization) {
       // Attempt to parse the Bearer token
-      let token = req.headers.Authorization.replace(/^Bearer/,'').trim()
+      let token = req.headers.authorization.replace(/^Bearer/,'').trim()
       // Set the token in the request scope
       req.token = token
       // Do some checking here to make sure it is valid (set an auth flag)
