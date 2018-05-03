@@ -17,12 +17,10 @@ const app = require('lambda-api')({ version: 'v1.0', base: 'v1' })
 //----------------------------------------------------------------------------//
 
   // Add CORS Middleware
-  app.use(function(req,res,next) {
+  app.use((req,res,next) => {
 
-    // Add CORS headers for every request
-    res.header('Access-Control-Allow-Origin', '*')
-    res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS')
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With')
+    // Add default CORS headers for every request
+    res.cors()
 
     // Call next to continue processing
     next()
@@ -30,7 +28,7 @@ const app = require('lambda-api')({ version: 'v1.0', base: 'v1' })
 
 
   // Add Authorization Middleware
-  app.use(function(req,res,next) {
+  app.use((req,res,next) => {
 
     // Check for Authorization headers
     if (req.headers.authorization) {
@@ -51,7 +49,7 @@ const app = require('lambda-api')({ version: 'v1.0', base: 'v1' })
 //----------------------------------------------------------------------------//
 
   // Get
-  app.get('/posts', function(req,res) {
+  app.get('/posts', (req,res) => {
     // Send the response
     res.status(200).json({
       status: 'ok',
@@ -63,7 +61,7 @@ const app = require('lambda-api')({ version: 'v1.0', base: 'v1' })
   })
 
   // Post
-  app.post('/posts', function(req,res) {
+  app.post('/posts', (req,res) => {
     // Send the response
     res.status(200).json({
       status: 'ok',
@@ -75,7 +73,7 @@ const app = require('lambda-api')({ version: 'v1.0', base: 'v1' })
   })
 
   // Put
-  app.put('/posts/:post_id', function(req,res) {
+  app.put('/posts/:post_id', (req,res) => {
     // Send the response
     res.status(200).json({
       status: 'ok',
@@ -89,7 +87,7 @@ const app = require('lambda-api')({ version: 'v1.0', base: 'v1' })
 
 
   // Delete
-  app.delete('/posts/:post_id', function(req,res) {
+  app.delete('/posts/:post_id', (req,res) => {
     // Send the response
     res.status(200).json({
       status: 'ok',
@@ -101,7 +99,7 @@ const app = require('lambda-api')({ version: 'v1.0', base: 'v1' })
 
 
   // Default Options for CORS preflight
-  app.options('/*', function(req,res) {
+  app.options('/*', (req,res) => {
     res.status(200).json({})
   })
 

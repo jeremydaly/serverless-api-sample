@@ -2,8 +2,8 @@ service: serverless-api-sample
 
 provider:
   name: aws
-  runtime: nodejs6.10
-  stage: ${opt:stage,self:custom.stage}
+  runtime: nodejs8.10
+  stage: ${opt:stage,'dev'}
   region: us-east-1
   profile: <YOUR AWS PROFILE>
   iamRoleStatements: # IAM Role Permissions
@@ -30,7 +30,6 @@ provider:
 
 # Custom variables
 custom:
-  stage: dev
   stages: # for stage manager
     - dev
     - staging
