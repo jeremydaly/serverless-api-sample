@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/jeremydaly/serverless-api-sample#readme",
   "dependencies": {
-    "lambda-api": "^0.5.1",
+    "lambda-api": "^0.6.0",
     "serverless-stage-manager": "^1.0.5"
   }
 }
